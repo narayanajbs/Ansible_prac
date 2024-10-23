@@ -1,0 +1,10 @@
+- name: reading variable from file
+  hosts: localhost
+  become: yes
+  vars_frile:
+    variables.yaml
+  tasks:
+  - name: using loop reading map values
+    ansible.builtin.debug:
+      msg: "component: {{ item.key }} and {{ item.value }}"
+    loop: "{{ softwares | dict2items }}""

@@ -1,0 +1,13 @@
+softwares:
+  catalogs: nodejs
+  users: nodejs
+  web: nginx
+  cart: nodejs
+  shipping: maven
+  payment: python3-devel
+  dispatch: golang
+databases:
+  - mysql
+  - mongodb
+  - rabbitmq
+  - radies

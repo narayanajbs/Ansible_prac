@@ -4,7 +4,7 @@
   gather_facts: no
   
   vars:
-    softwares:
+    softwaress:
       catalogs: nodejs
       users: nodejs
       web: nginx
@@ -21,4 +21,4 @@
   - name: reading map field
     ansible.builtin.debug:
      msg:  "reading map field {{ item.key }} and {{ item.value }}"
-    loop: "{{ softwares | dict2items }}"
+    loop: "{{ softwaress | dict2items }}"
