@@ -1,6 +1,8 @@
-- name: Playbook to Read Software Map Variables
+- name: Variable and loops
   hosts: localhost
+  become: yes
   gather_facts: no
+  
   vars:
     softwares:
       catalogs: nodejs
@@ -10,13 +12,13 @@
       shipping: maven
       payment: python3-devel
       dispatch: golang
-
+    databases:
+      - mysql
+      - mongodb
+      - rabbitmq
+      - radies
   tasks:
-    - name: Display all software components
-      ansible.builtin.debug:
-        msg: "Component: {{ item.key }}, Software: {{ item.value }}"
-      loop: "{{ softwares | dict2items }}"
-
-    - name: Display specific software
-      ansible.builtin.debug:
-        msg: "The software for 'payment' is {{ softwares.payment }}"
+  - name: reading map field
+    ansible.builtin.debug:
+     msg:  "reading map field {{ item.key }} and {{ item.value }}"
+    loop: "{{ softwares | dict2items }}"
