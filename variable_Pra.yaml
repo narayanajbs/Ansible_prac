@@ -1,0 +1,22 @@
+- name: Variable and loops
+  hosts: localhost
+  become: yes
+  vars:
+    softwares:
+      catalogs: nodejs
+      users: nodejs
+      web: nginx
+      cart: nodejs
+      shipping: maven
+      payment: python3-devel
+      dispatch: golang
+    databases:
+      - mysql
+      - mongodb
+      - rabbitmq
+      - radies
+  tasks:
+  - name: reading map field
+    ansible.builtin.debug:
+     msg:  "reading map field {{ item.key }}" and {{ item.vaule }}""
+    loop: softwares
