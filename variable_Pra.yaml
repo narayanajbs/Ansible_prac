@@ -19,4 +19,4 @@
   - name: reading map field
     ansible.builtin.debug:
      msg:  "reading map field {{ item.key }} and {{ item.vaule }}"
-    loop: softwares
+    loop: "{{ softwares | dict2items  }}"
