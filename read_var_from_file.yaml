@@ -7,4 +7,4 @@
   - name: using loop reading map values
     ansible.builtin.debug:
       msg: "component: {{ item.key }} and {{ item.value }}"
-    loop: "{{ softwares | dict2items }}""
+    loop: "{{ softwares | dict2items }}"
