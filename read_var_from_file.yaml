@@ -1,8 +1,9 @@
 - name: reading variable from file
   hosts: localhost
   become: yes
-  vars_frile:
-    variables.yaml
+  gather_facts: no
+  vars_friles:
+  - variables.yaml
   tasks:
   - name: using loop reading map values
     ansible.builtin.debug:
