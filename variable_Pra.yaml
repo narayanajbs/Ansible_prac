@@ -13,10 +13,10 @@
 
   tasks:
     - name: Display all software components
-      debug:
+      ansible.builtin.debug:
         msg: "Component: {{ item.key }}, Software: {{ item.value }}"
       loop: "{{ softwares | dict2items }}"
 
     - name: Display specific software
-      debug:
+      ansible.builtin.debug:
         msg: "The software for 'payment' is {{ softwares.payment }}"
